@@ -1,1 +1,221 @@
+/* การตั้งค่าพื้นฐานของหน้าเว็บ */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Sarabun', sans-serif;
+}
 
+body {
+    background-color: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* ส่วนหัวของเว็บไซต์ (Header) */
+header {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: white;
+    text-align: center;
+    padding: 2.5rem 1rem;
+}
+
+header h1 {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* แถบเมนูด้านบนสำหรับสลับโปรไฟล์ (Navigation Tabs) */
+.tab-nav {
+    display: flex;
+    justify-content: center;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.tab-btn {
+    background: none;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #666;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-bottom: 4px solid transparent;
+}
+
+.tab-btn:hover {
+    color: #1e3c72;
+}
+
+.tab-btn.active {
+    color: #1e3c72;
+    border-bottom-color: #1e3c72;
+}
+
+/* โครงสร้างเนื้อหาหลัก (Container) */
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.portfolio-section {
+    display: none;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.portfolio-section.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* การ์ดแสดงข้อมูลส่วนตัวด้านบน (Profile Header Card) */
+.profile-card {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
+}
+
+.profile-img-cover {
+    width: 280px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.profile-details {
+    flex: 1;
+    min-width: 300px;
+}
+
+.profile-details h2 {
+    font-size: 1.8rem;
+    color: #1e3c72;
+    margin-bottom: 0.5rem;
+}
+
+.profile-details h3 {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 1rem;
+    font-weight: 400;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.8rem;
+    margin-top: 1rem;
+}
+
+.info-item {
+    background: #f8f9fa;
+    padding: 0.8rem;
+    border-radius: 6px;
+    border-left: 4px solid #1e3c72;
+}
+
+/* กล่องเนื้อหาและหัวข้อส่วนต่างๆ (Content Blocks) */
+.content-block {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.content-block h3 {
+    font-size: 1.4rem;
+    color: #1e3c72;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #eef2f5;
+    padding-bottom: 0.5rem;
+}
+
+/* กล่องคำคม / คติประจำใจ (Quote Box) */
+.quote-box {
+    background: #eef5ff;
+    border-left: 4px solid #2a5298;
+    padding: 1rem 1.5rem;
+    margin: 1rem 0;
+    border-radius: 0 8px 8px 0;
+    font-style: italic;
+}
+
+/* แกลเลอรีแสดงรูปภาพเอกสาร/กิจกรรม (Image Gallery Grid) */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.gallery-item {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    background: #fff;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.gallery-item p {
+    padding: 0.8rem;
+    font-size: 0.9rem;
+    text-align: center;
+    background: #fafafa;
+    color: #555;
+}
+
+/* ส่วนท้ายเว็บไซต์ (Footer) */
+footer {
+    text-align: center;
+    padding: 2rem;
+    color: #777;
+    font-size: 0.9rem;
+    border-top: 1px solid #e0e0e0;
+    margin-top: 3rem;
+}
+
+/* การรองรับหน้าจออุปกรณ์พกพา (Responsive Design) */
+@media (max-width: 768px) {
+    .profile-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    .profile-img-cover {
+        width: 100%;
+        max-width: 300px;
+    }
+    .info-item {
+        text-align: left;
+    }
+}
